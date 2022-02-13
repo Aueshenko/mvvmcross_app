@@ -10,7 +10,6 @@ namespace MyMvvmCrossApp1.Core.ViewModels.Home
 {
     public class HomeViewModel : BaseViewModel 
     {
-        //SomeService service in args
         public HomeViewModel(AuthService authService)
         {
             _authService = authService;

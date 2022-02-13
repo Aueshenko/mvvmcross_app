@@ -20,10 +20,4 @@ namespace MyMvvmCrossApp1.Core
             Mvx.IoCProvider.RegisterType<AuthService>();
         }
     }
-
-
-    public class Foo
-    {
-        public static Foo Instance { get; } = new Foo();
-    }
 }
