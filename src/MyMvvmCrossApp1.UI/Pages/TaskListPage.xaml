@@ -10,9 +10,7 @@
     Title="Second form">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to TaskListPage!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView ItemsSource="{Binding TaskNames}" />
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>

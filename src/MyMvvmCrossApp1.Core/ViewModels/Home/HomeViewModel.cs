@@ -17,14 +17,14 @@ namespace MyMvvmCrossApp1.Core.ViewModels.Home
 
         public string Login
         {
-            get { return _login; }
-            set { SetProperty(ref _login, value); }
+            get => _login;
+            set => SetProperty(ref _login, value);
         }
 
         public string Password
         {
-            get { return _password; }
-            set { SetProperty(ref _password, value); }
+            get => _password;
+            set => SetProperty(ref _password, value);
         }
 
         public ICommand AuthCommand => new MvxCommand(
