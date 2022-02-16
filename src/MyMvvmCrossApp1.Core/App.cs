@@ -18,6 +18,7 @@ namespace MyMvvmCrossApp1.Core
             RegisterAppStart<HomeViewModel>();
 
             Mvx.IoCProvider.RegisterType<AuthService>();
+            Mvx.IoCProvider.RegisterType<TaskListService>();
         }
     }
 }

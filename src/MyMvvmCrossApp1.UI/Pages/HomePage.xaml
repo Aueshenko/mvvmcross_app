@@ -7,12 +7,12 @@
     xmlns:local="clr-namespace:MyMvvmCrossApp1.UI.Pages"
     x:Class="MyMvvmCrossApp1.UI.Pages.HomePage"
     xmlns:viewModels="clr-namespace:MyMvvmCrossApp1.Core.ViewModels.Home;assembly=MyMvvmCrossApp1.Core" x:DataType="viewModels:HomeViewModel"
-                      Title="Sign In form">
+    Title="Sign In form">
     <ContentPage.Content>
         <StackLayout>
-            <Entry Text="{Binding Email, Mode=TwoWay}" TranslationX="30" VerticalOptions="Center" Placeholder="Email"/>
-            <Entry Placeholder="{Binding Password}" VerticalOptions="Center" HorizontalOptions="Center" IsPassword="True"/>
-            <Button Command ="{Binding SomeCommand}" Text="Sign In" VerticalOptions="Center"/>
+            <Entry Text="{Binding Login, Mode=TwoWay}" TranslationX="30" VerticalOptions="Center" Placeholder="Login"/>
+            <Entry Text="{Binding Password, Mode=TwoWay}" VerticalOptions="Center" IsPassword="True" Placeholder="Password"/>
+            <Button Command ="{Binding AuthCommand}" Text="Sign In" VerticalOptions="Center" />
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>

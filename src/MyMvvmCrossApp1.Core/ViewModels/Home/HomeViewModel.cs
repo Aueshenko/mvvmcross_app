@@ -1,25 +1,24 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using MyMvvmCrossApp1.Core.Services;
 
 namespace MyMvvmCrossApp1.Core.ViewModels.Home
 {
-    public class HomeViewModel : BaseViewModel 
+    public class HomeViewModel : MvxViewModel
     {
-        public HomeViewModel(AuthService authService)
+        public HomeViewModel(AuthService authService, IMvxNavigationService navigationService)
         {
             _authService = authService;
+            _navigationService = navigationService;
         }
 
-
-        public string Email
+        public string Login
         {
-            get { return _email; }
-            set { SetProperty(ref _email, value); }
+            get { return _login; }
+            set { SetProperty(ref _login, value); }
         }
 
         public string Password
@@ -28,14 +27,16 @@ namespace MyMvvmCrossApp1.Core.ViewModels.Home
             set { SetProperty(ref _password, value); }
         }
 
-        public ICommand SomeCommand => new MvxCommand(
-            async () => await _authService.Authorize(Email, Password));
+        public ICommand AuthCommand => new MvxCommand(
+
+            async () => { if (await _authService.Authorize(Login, Password) == true) { await _navigationService.Navigate<TaskListViewModel>(); } });
 
 
 
 
-        private string _email = "";
-        private string _password = "";
+        private string _login;
+        private string _password;
         private readonly AuthService _authService;
+        private readonly IMvxNavigationService _navigationService;
     }
 }
