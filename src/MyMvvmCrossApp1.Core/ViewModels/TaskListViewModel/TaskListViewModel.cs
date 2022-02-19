@@ -14,18 +14,20 @@ namespace MyMvvmCrossApp1.Core.ViewModels.TaskList
             _taskListService = taskListService;
         }
 
-        public Task<List<string>> TaskNames
-        {
-            get => _taskNames;
-            set => SetProperty(ref _taskNames, value);
-        }
-        //public Task<List<string>> ShowTasks()
-        //{
-        //    TaskNames = _taskListService.ShowTaskList();
-        //    return TaskNames;
-        //}
+        public MvxObservableCollection<string> TaskNames { get; }
+            = new MvxObservableCollection<string>();
 
-        private Task<List<string>> _taskNames;
+        public override async void ViewAppeared() => await LoadTasksAsync();
+
+        public async Task LoadTasksAsync()
+        {
+            var tasks = await _taskListService.ShowTaskList();
+            TaskNames.AddRange(tasks);
+        }
+
+
+
+
         private readonly TaskListService _taskListService;
     }
 }
