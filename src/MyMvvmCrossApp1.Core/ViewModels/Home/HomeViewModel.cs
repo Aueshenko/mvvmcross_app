@@ -4,6 +4,7 @@ using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using MyMvvmCrossApp1.Core.Services;
+using MyMvvmCrossApp1.Core.ViewModels.TaskList;
 
 namespace MyMvvmCrossApp1.Core.ViewModels.Home
 {
@@ -27,11 +28,17 @@ namespace MyMvvmCrossApp1.Core.ViewModels.Home
             set => SetProperty(ref _password, value);
         }
 
-        public ICommand AuthCommand => new MvxCommand(
-
-            async () => { if (await _authService.Authorize(Login, Password) == true) { await _navigationService.Navigate<TaskListViewModel>(); } });
+        public ICommand AuthCommand => new MvxCommand(() => AuthorizeAsync());
 
 
+
+        private async void AuthorizeAsync()
+        {
+            if (await _authService.Authorize(Login, Password) == true)
+            {
+                await _navigationService.Navigate<TaskListViewModel>();
+            }
+        }
 
 
         private string _login;

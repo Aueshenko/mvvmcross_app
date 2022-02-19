@@ -19,10 +19,11 @@
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidStoreUncompressedFileExtensions />
     <MandroidI18n />
-    <JavaMaximumHeapSize />
+    <JavaMaximumHeapSize></JavaMaximumHeapSize>
     <JavaOptions />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <AndroidLinkSkip>MyMvvmCrossApp1.Core;MyMvvmCrossApp1.UI;</AndroidLinkSkip>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,7 +37,6 @@
     <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidSupportedAbis>
     </AndroidSupportedAbis>
-    <AndroidLinkSkip>MyMvvmCrossApp1.Core;MyMvvmCrossApp1.UI;</AndroidLinkSkip>
     <EmbedAssembliesIntoApk>false</EmbedAssembliesIntoApk>
     <EnableProguard>false</EnableProguard>
     <AotAssemblies>false</AotAssemblies>
@@ -54,7 +54,6 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
-    <AndroidLinkSkip>MyMvvmCrossApp1.Core;MyMvvmCrossApp1.UI;</AndroidLinkSkip>
     <EnableProguard>true</EnableProguard>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <LangVersion>8.0</LangVersion>
@@ -146,10 +145,12 @@
     <ProjectReference Include="..\MyMvvmCrossApp1.Core\MyMvvmCrossApp1.Core.csproj">
       <Project>{AF578633-4C1F-4A5E-8B5B-12F7E9746423}</Project>
       <Name>MyMvvmCrossApp1.Core</Name>
+      <ReferenceSourceTarget></ReferenceSourceTarget>
     </ProjectReference>
     <ProjectReference Include="..\MyMvvmCrossApp1.UI\MyMvvmCrossApp1.UI.csproj">
       <Project>{99BC9705-E2E9-46DA-B2DD-710F9C08CEAD}</Project>
       <Name>MyMvvmCrossApp1.UI</Name>
+      <ReferenceSourceTarget></ReferenceSourceTarget>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\MyMvvmCrossApp1.Droid.Shared\MyMvvmCrossApp1.Droid.Shared.projitems" Label="Shared" />

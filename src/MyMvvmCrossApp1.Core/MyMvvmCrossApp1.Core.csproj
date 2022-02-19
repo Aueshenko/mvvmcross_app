@@ -11,4 +11,10 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ViewModels\TaskListViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\TaskListViewModel\" />
+  </ItemGroup>
 </Project>

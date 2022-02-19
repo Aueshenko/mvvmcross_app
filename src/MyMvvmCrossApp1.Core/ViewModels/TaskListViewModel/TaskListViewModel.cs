@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using MvvmCross.ViewModels;
 using MyMvvmCrossApp1.Core.Services;
 
-namespace MyMvvmCrossApp1.Core.ViewModels.Home
+namespace MyMvvmCrossApp1.Core.ViewModels.TaskList
 {
     public class TaskListViewModel : MvxViewModel
     {
