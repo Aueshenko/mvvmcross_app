@@ -10,7 +10,7 @@
     Title="Second form">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding TaskNames}" />
+            <ListView ItemsSource="{Binding TaskNames}"/>
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>
