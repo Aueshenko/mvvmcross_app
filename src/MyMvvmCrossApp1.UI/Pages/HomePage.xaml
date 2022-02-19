@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<views:MvxContentPage x:TypeArguments="viewModels:HomeViewModel"
+<views:MvxContentPage
+    x:TypeArguments="viewModels:HomeViewModel"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
@@ -9,8 +10,8 @@
     xmlns:viewModels="clr-namespace:MyMvvmCrossApp1.Core.ViewModels.Home;assembly=MyMvvmCrossApp1.Core" x:DataType="viewModels:HomeViewModel"
     Title="Sign In form">
     <ContentPage.Content>
-        <StackLayout>
-            <Entry Text="{Binding Login, Mode=TwoWay}" TranslationX="30" VerticalOptions="Center" Placeholder="Login"/>
+        <StackLayout HorizontalOptions="FillAndExpand" Margin="20">
+            <Entry Text="{Binding Login, Mode=TwoWay}" VerticalOptions="Center" Placeholder="Login"/>
             <Entry Text="{Binding Password, Mode=TwoWay}" VerticalOptions="Center" IsPassword="True" Placeholder="Password"/>
             <Button Command ="{Binding AuthCommand}" Text="Sign In" VerticalOptions="Center" />
         </StackLayout>
